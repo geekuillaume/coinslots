@@ -1,0 +1,34 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Coin Slot</h1>
+    <p class="lead">An awesome coin slot system that is going to change the world</p>
+  </div>
+</header>
+
+<div class="container">
+  <form class="thing-form">
+    <label>Syncs in realtime across clients</label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Name" ng-model="$ctrl.newCoinslot.name">
+      <input type="text" class="form-control" placeholder="Description" ng-model="$ctrl.newCoinslot.description">
+      <input type="text" class="form-control" placeholder="Emplacement" ng-model="$ctrl.newCoinslot.emplacement">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="$ctrl.addCoinslot()">Add New</button>
+      </span>
+    </p>
+  </form>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Coin slots:</h1>
+      <div class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="coinslot in $ctrl.coinslots">
+        <p>{{coinslot.name}}</p>
+        <p>{{coinslot.description}}</p>
+        <p>{{coinslot.emplacement}}</p>
+        <p>Amount: ${{coinslot.amount}} <button type="button" class="addMoney" ng-click="$ctrl.addMoney(coinslot)">+</button></p>
+        <button type="button" class="close" ng-click="$ctrl.deleteCoinslot(coinslot)">&times;</button>
+      </div>
+    </div>
+  </div>
+
+</div>
