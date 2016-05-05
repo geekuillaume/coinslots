@@ -25,7 +25,7 @@
         <p>{{coinslot.name}}</p>
         <p>{{coinslot.description}}</p>
         <p>{{coinslot.emplacement}}</p>
-        <p>Amount: ${{coinslot.amount}} <button type="button" class="addMoney" ng-click="$ctrl.addMoney(coinslot)">+</button></p>
+        <p>Amount: ${{coinslot.amount}} <button type="button" class="addMoney" ng-click="$ctrl.addMoney(coinslot)">+</button><button type="button" class="addMoney" ng-click="$ctrl.lessMoney(coinslot)">-</button></p>
         <button type="button" class="close" ng-click="$ctrl.deleteCoinslot(coinslot)">&times;</button>
       </div>
     </div>

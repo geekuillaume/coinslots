@@ -11,7 +11,7 @@ export default function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     emplacement: DataTypes.STRING,
-    money: DataTypes.DECIMAL,
+    amount: DataTypes.DECIMAL,
     active: DataTypes.BOOLEAN
   });
 }

@@ -23,6 +23,7 @@ class MainController {
 
   addCoinslot() {
     if (this.newCoinslot) {
+      this.newCoinslot.amount = 0;
       this.$http.post('/api/coinslots', this.newCoinslot);
       this.newCoinslot = {};
     }
@@ -30,6 +31,11 @@ class MainController {
 
   addMoney(coinslot) {
     coinslot.amount += 1;
+    this.$http.put('/api/coinslots/' + coinslot._id, coinslot);
+  }
+
+  lessMoney(coinslot) {
+    coinslot.amount -= 1;
     this.$http.put('/api/coinslots/' + coinslot._id, coinslot);
   }
 

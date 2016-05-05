@@ -44,26 +44,26 @@ Thing.sync()
     }]);
   });
 
-User.sync()
-  .then(() => User.destroy({ where: {} }))
-  .then(() => {
-    User.bulkCreate([{
-      provider: 'local',
-      name: 'Test User',
-      email: 'test@example.com',
-      password: 'test'
-    }, {
-      provider: 'local',
-      role: 'admin',
-      name: 'Admin',
-      email: 'admin@example.com',
-      password: 'admin'
-    }])
-    .then(() => {
-      console.log('finished populating users');
-    });
-  });
+// User.sync()
+//   .then(() => User.destroy({ where: {} }))
+//   .then(() => {
+//     User.bulkCreate([{
+//       provider: 'local',
+//       name: 'Test User',
+//       email: 'test@example.com',
+//       password: 'test'
+//     }, {
+//       provider: 'local',
+//       role: 'admin',
+//       name: 'Admin',
+//       email: 'admin@example.com',
+//       password: 'admin'
+//     }])
+//     .then(() => {
+//       console.log('finished populating users');
+//     });
+//   });
 
-Coinslot.sync()
+Coinslot.sync({force: true})
   .then(() => Coinslot.destroy({ where: {} }))
   .then(() => console.log('coin slot populated'))
